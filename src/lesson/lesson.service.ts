@@ -24,6 +24,10 @@ export class LessonService {
     return this.lessonRepository.save(lesson);
   }
 
+  async getLessons(): Promise<Lesson[]> {
+    return this.lessonRepository.find();
+  }
+
   async getLesson(id: string): Promise<Lesson> {
     return this.lessonRepository.findOne({ id });
   }
