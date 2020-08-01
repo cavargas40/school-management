@@ -10,12 +10,12 @@ export class LessonResolver {
   constructor(private lessonService: LessonService) {}
 
   @Query(returns => LessonType)
-  lesson(@Args('id') id: string) {
+  lesson(@Args('id') id: string): Promise<Lesson> {
     return this.lessonService.getLesson(id);
   }
 
   @Query(returns => [LessonType])
-  lessons() {
+  lessons(): Promise<Lesson[]> {
     return this.lessonService.getLessons();
   }
 
