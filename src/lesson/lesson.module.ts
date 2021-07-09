@@ -5,9 +5,10 @@ import { LessonResolver } from './lesson.resolver';
 import { LessonService } from './lesson.service';
 
 import { Lesson } from './lesson.entitiy';
+import { StudentModule } from 'src/student/student.module';
 
 @Module({
-  imports: [TypeOrmModule.forFeature([Lesson])],
+  imports: [TypeOrmModule.forFeature([Lesson]), StudentModule],
   providers: [LessonResolver, LessonService],
 })
 export class LessonModule {}
